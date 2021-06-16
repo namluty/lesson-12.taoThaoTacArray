@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành tạo và thao tác vs mảng</title>
+</head>
+<body>
+<!--// 1. Tạo giao diện-->
+<!--// 	- thẻ input-->
+<!--// 	- nút add: thêm phẩn tử vừa nhập vào mảng-->
+<!--// 	- nút display: hiển thị dữ liệu cho người dùng;-->
+<!--// 2. Khai báo mảng-->
+<!--// 	- let numbers = new array();-->
+<!--// 	- let numbers = [];-->
+<!--// 3. Nhập dữ liệu-->
+<!--// 	- numbers[0] = input-->
+<!--// 4. Hiển thị-->
+<!--// 	- loop cac phan tu cua mang sau do hien thi tung phan tu-->
+
+<input type="text" id="textNumber" />
+<button onclick="addNumber();" type="button">Add</button>
+<button onclick="displayNumber();" type="button">Display</button>
+<p id="display"></p>
+<script>
+    let numbers = [1, 2, 3, 4, 5];
+        function addNumber(){
+            let index = numbers.length;
+            let number = parseInt(document.getElementById('textNumber').value);
+            numbers[index]=number;
+            // xoá dữ liệu ở input
+            document.getElementById('textNumber').value = '';
+        }
+        function displayNumber() {
+            let display ='';
+            for (let i = 0; i < numbers.length; i++) {
+            display += '<p> Element ' + i + " = " + numbers[i] + "</p>";
+            document.getElementById('display').innerHTML = display;
+        }
+        }
+
+</script>
+</body>
+</html>
